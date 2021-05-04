@@ -33,10 +33,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 	}
 	
-	
-	@objc func textFieldDidChange(_ textField: UITextField) {
-		
-	}
+
 	
 	
 	var coordinator: Coordinator?
@@ -74,4 +71,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		return cell
 	}
 	
+	@objc func textFieldDidChange(_ textField: UITextField) {
+		print(textField.text)
+	}
 }
