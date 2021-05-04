@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */; };
 		4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC72263F9360009586DD /* AppDelegate.swift */; };
 		4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC74263F9360009586DD /* SceneDelegate.swift */; };
 		4BD2BC77263F9360009586DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC76263F9360009586DD /* ViewController.swift */; };
-		4BD2BC7A263F9360009586DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BC78263F9360009586DD /* Main.storyboard */; };
 		4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BC7B263F9364009586DD /* Assets.xcassets */; };
 		4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BC7D263F9364009586DD /* LaunchScreen.storyboard */; };
 		4BD2BC8A263F9365009586DD /* ChatDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC89263F9365009586DD /* ChatDemoAppTests.swift */; };
 		4BD2BC95263F9365009586DD /* ChatDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC94263F9365009586DD /* ChatDemoAppUITests.swift */; };
+		4BD2BCA9263F9459009586DD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCA8263F9459009586DD /* Coordinator.swift */; };
+		4BD2BCAE26406753009586DD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCAD26406753009586DD /* MainCoordinator.swift */; };
+		4BD2BCB426408123009586DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB226408123009586DD /* SecondViewController.swift */; };
+		4BD2BCB526408123009586DD /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB326408123009586DD /* SecondViewController.xib */; };
+		4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */; };
+		4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerModel.swift; sourceTree = "<group>"; };
 		4BD2BC6F263F9360009586DD /* ChatDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC72263F9360009586DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC74263F9360009586DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC76263F9360009586DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BD2BC79263F9360009586DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD2BC7B263F9364009586DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD2BC7E263F9364009586DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD2BC80263F9364009586DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		4BD2BC90263F9365009586DD /* ChatDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC94263F9365009586DD /* ChatDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDemoAppUITests.swift; sourceTree = "<group>"; };
 		4BD2BC96263F9365009586DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD2BCA8263F9459009586DD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4BD2BCAD26406753009586DD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4BD2BCB226408123009586DD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4BD2BCB326408123009586DD /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOneCollectionViewCell.swift; sourceTree = "<group>"; };
+		4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonOneCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,16 @@
 		4BD2BC71263F9360009586DD /* ChatDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BD2BCC12640A2B7009586DD /* Screens */,
+				4BD2BCB926409C20009586DD /* Cells */,
 				4BD2BC72263F9360009586DD /* AppDelegate.swift */,
 				4BD2BC74263F9360009586DD /* SceneDelegate.swift */,
 				4BD2BC76263F9360009586DD /* ViewController.swift */,
-				4BD2BC78263F9360009586DD /* Main.storyboard */,
 				4BD2BC7B263F9364009586DD /* Assets.xcassets */,
 				4BD2BC7D263F9364009586DD /* LaunchScreen.storyboard */,
 				4BD2BC80263F9364009586DD /* Info.plist */,
+				4BD2BCA8263F9459009586DD /* Coordinator.swift */,
+				4BD2BCAD26406753009586DD /* MainCoordinator.swift */,
 			);
 			path = ChatDemoApp;
 			sourceTree = "<group>";
@@ -126,6 +141,25 @@
 				4BD2BC96263F9365009586DD /* Info.plist */,
 			);
 			path = ChatDemoAppUITests;
+			sourceTree = "<group>";
+		};
+		4BD2BCB926409C20009586DD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */,
+				4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4BD2BCC12640A2B7009586DD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2BCB226408123009586DD /* SecondViewController.swift */,
+				4BD2BCB326408123009586DD /* SecondViewController.xib */,
+				4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */,
 				4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */,
 				4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */,
-				4BD2BC7A263F9360009586DD /* Main.storyboard in Resources */,
+				4BD2BCB526408123009586DD /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD2BCB426408123009586DD /* SecondViewController.swift in Sources */,
+				4BD2BCA9263F9459009586DD /* Coordinator.swift in Sources */,
 				4BD2BC77263F9360009586DD /* ViewController.swift in Sources */,
+				4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */,
 				4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */,
+				4BD2BCAE26406753009586DD /* MainCoordinator.swift in Sources */,
+				4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */,
 				4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +336,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4BD2BC78263F9360009586DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD2BC79263F9360009586DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4BD2BC7D263F9364009586DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
