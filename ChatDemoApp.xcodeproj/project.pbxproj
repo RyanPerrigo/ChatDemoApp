@@ -14,9 +14,9 @@
 		4BB53A6C264596D200804906 /* ChoosePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6B264596D200804906 /* ChoosePerson.swift */; };
 		4BB53A702645B52100804906 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6E2645B52100804906 /* MainViewController.swift */; };
 		4BB53A712645B52100804906 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A6F2645B52100804906 /* MainViewController.xib */; };
-		4BB53A762645E68C00804906 /* Nunito in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A752645E68C00804906 /* Nunito */; };
 		4BB53A792645E8E200804906 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */; };
 		4BB53A7B2645F0A900804906 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A7A2645F0A900804906 /* String+Extensions.swift */; };
+		4BB53A7E2646072D00804906 /* Nunito in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A7D2646072D00804906 /* Nunito */; };
 		4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC72263F9360009586DD /* AppDelegate.swift */; };
 		4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC74263F9360009586DD /* SceneDelegate.swift */; };
 		4BD2BC77263F9360009586DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC76263F9360009586DD /* ViewController.swift */; };
@@ -57,9 +57,9 @@
 		4BB53A6B264596D200804906 /* ChoosePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePerson.swift; sourceTree = "<group>"; };
 		4BB53A6E2645B52100804906 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4BB53A6F2645B52100804906 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		4BB53A752645E68C00804906 /* Nunito */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito; sourceTree = "<group>"; };
 		4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		4BB53A7A2645F0A900804906 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4BB53A7D2646072D00804906 /* Nunito */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito; sourceTree = "<group>"; };
 		4BD2BC6F263F9360009586DD /* ChatDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC72263F9360009586DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC74263F9360009586DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,14 +135,6 @@
 			path = mainViewController;
 			sourceTree = "<group>";
 		};
-		4BB53A742645E67500804906 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				4BB53A752645E68C00804906 /* Nunito */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		4BB53A772645E80100804906 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +144,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4BB53A7C2646065B00804906 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A7D2646072D00804906 /* Nunito */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4BD2BC66263F9360009586DD = {
 			isa = PBXGroup;
 			children = (
-				4BB53A742645E67500804906 /* Fonts */,
 				4BD2BC71263F9360009586DD /* ChatDemoApp */,
 				4BD2BC88263F9365009586DD /* ChatDemoAppTests */,
 				4BD2BC93263F9365009586DD /* ChatDemoAppUITests */,
@@ -176,6 +175,7 @@
 		4BD2BC71263F9360009586DD /* ChatDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BB53A7C2646065B00804906 /* Fonts */,
 				4BB53A772645E80100804906 /* Extensions */,
 				4BD2BCC12640A2B7009586DD /* Screens */,
 				4BD2BCB926409C20009586DD /* Cells */,
@@ -332,7 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BB53A762645E68C00804906 /* Nunito in Resources */,
+				4BB53A7E2646072D00804906 /* Nunito in Resources */,
 				4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */,
 				4BB53A712645B52100804906 /* MainViewController.xib in Resources */,
 				4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */,

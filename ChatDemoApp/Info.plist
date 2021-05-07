@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Nunito-ExtraBold.ttf</string>
 		<string>NunitoBold.ttf</string>
 		<string>NunitoRegular.ttf</string>
 	</array>

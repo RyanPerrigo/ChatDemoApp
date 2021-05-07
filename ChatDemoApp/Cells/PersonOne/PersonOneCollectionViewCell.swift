@@ -19,7 +19,7 @@ class PersonOneCollectionViewCell: UICollectionViewCell {
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
-		textLabel.font = UIFont(name: "NunitoBold", size: 12)
+		textLabel.font = UIFont(name: "Nunito-ExtraBold", size: 12)
 		meImage.layer.cornerRadius = 8
 		meImage.image = UIImage(named: "MeImage")
 		textLabel.textColor = UIColor.black
