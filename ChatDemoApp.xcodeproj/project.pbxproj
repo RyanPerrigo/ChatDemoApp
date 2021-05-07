@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */; };
+		4BB53A64264496BD00804906 /* PersonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A63264496BC00804906 /* PersonOne.swift */; };
+		4BB53A6926458D6800804906 /* PersonTwoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6726458D6800804906 /* PersonTwoCollectionViewCell.swift */; };
+		4BB53A6A26458D6800804906 /* PersonTwoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A6826458D6800804906 /* PersonTwoCollectionViewCell.xib */; };
+		4BB53A6C264596D200804906 /* ChoosePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6B264596D200804906 /* ChoosePerson.swift */; };
 		4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC72263F9360009586DD /* AppDelegate.swift */; };
 		4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC74263F9360009586DD /* SceneDelegate.swift */; };
 		4BD2BC77263F9360009586DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC76263F9360009586DD /* ViewController.swift */; };
@@ -42,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerModel.swift; sourceTree = "<group>"; };
+		4BB53A63264496BC00804906 /* PersonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOne.swift; sourceTree = "<group>"; };
+		4BB53A6726458D6800804906 /* PersonTwoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTwoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4BB53A6826458D6800804906 /* PersonTwoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTwoCollectionViewCell.xib; sourceTree = "<group>"; };
+		4BB53A6B264596D200804906 /* ChoosePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePerson.swift; sourceTree = "<group>"; };
 		4BD2BC6F263F9360009586DD /* ChatDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC72263F9360009586DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC74263F9360009586DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BB53A6526458D3700804906 /* PersonTwo */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A6726458D6800804906 /* PersonTwoCollectionViewCell.swift */,
+				4BB53A6826458D6800804906 /* PersonTwoCollectionViewCell.xib */,
+			);
+			path = PersonTwo;
+			sourceTree = "<group>";
+		};
+		4BB53A6626458D4200804906 /* PersonOne */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */,
+				4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */,
+				4BB53A63264496BC00804906 /* PersonOne.swift */,
+			);
+			path = PersonOne;
+			sourceTree = "<group>";
+		};
 		4BD2BC66263F9360009586DD = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +173,8 @@
 		4BD2BCB926409C20009586DD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */,
-				4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */,
+				4BB53A6626458D4200804906 /* PersonOne */,
+				4BB53A6526458D3700804906 /* PersonTwo */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +185,7 @@
 				4BD2BCB226408123009586DD /* SecondViewController.swift */,
 				4BD2BCB326408123009586DD /* SecondViewController.xib */,
 				4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */,
+				4BB53A6B264596D200804906 /* ChoosePerson.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -268,6 +296,7 @@
 				4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */,
 				4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */,
 				4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */,
+				4BB53A6A26458D6800804906 /* PersonTwoCollectionViewCell.xib in Resources */,
 				4BD2BCB526408123009586DD /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,9 +326,12 @@
 				4BD2BCA9263F9459009586DD /* Coordinator.swift in Sources */,
 				4BD2BC77263F9360009586DD /* ViewController.swift in Sources */,
 				4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */,
+				4BB53A6926458D6800804906 /* PersonTwoCollectionViewCell.swift in Sources */,
+				4BB53A6C264596D200804906 /* ChoosePerson.swift in Sources */,
 				4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */,
 				4BD2BCAE26406753009586DD /* MainCoordinator.swift in Sources */,
 				4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */,
+				4BB53A64264496BD00804906 /* PersonOne.swift in Sources */,
 				4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

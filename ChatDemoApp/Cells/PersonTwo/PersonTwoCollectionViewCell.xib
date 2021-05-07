@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PersonTwoCollectionViewCell" customModule="ChatDemoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="220" height="115"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArE-kJ-zFE">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="115"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxj-Pl-BdS">
+                                <rect key="frame" x="63" y="0.0" width="157" height="115"/>
+                                <string key="text"> so this is what a long text will look like in this box so this is what a long text will look like in this box so this is what a long text will look like in this box so this is what a long text will look like in this box</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqm-mI-0iN">
+                                <rect key="frame" x="10" y="35" width="48" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3nF-Nw-UYf"/>
+                                    <constraint firstAttribute="width" constant="48" id="wHV-dZ-oUm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uxj-Pl-BdS" secondAttribute="bottom" id="3Rg-CC-9he"/>
+                            <constraint firstItem="uxj-Pl-BdS" firstAttribute="top" secondItem="ArE-kJ-zFE" secondAttribute="top" id="GAQ-VF-Q9y"/>
+                            <constraint firstItem="Fqm-mI-0iN" firstAttribute="leading" secondItem="ArE-kJ-zFE" secondAttribute="leading" constant="10" id="OVT-vd-Ox5"/>
+                            <constraint firstItem="Fqm-mI-0iN" firstAttribute="centerY" secondItem="ArE-kJ-zFE" secondAttribute="centerY" id="dIL-6k-frM"/>
+                            <constraint firstAttribute="trailing" secondItem="uxj-Pl-BdS" secondAttribute="trailing" id="wP6-XY-VAL"/>
+                            <constraint firstItem="uxj-Pl-BdS" firstAttribute="leading" secondItem="Fqm-mI-0iN" secondAttribute="trailing" constant="5" id="xOw-eO-SCR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ArE-kJ-zFE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cgz-1W-5ld"/>
+                <constraint firstItem="ArE-kJ-zFE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="O0A-Rr-2pX"/>
+                <constraint firstAttribute="bottom" secondItem="ArE-kJ-zFE" secondAttribute="bottom" id="qkr-ie-DNE"/>
+                <constraint firstAttribute="trailing" secondItem="ArE-kJ-zFE" secondAttribute="trailing" id="uvw-tG-1Cw"/>
+            </constraints>
+            <size key="customSize" width="220" height="115"/>
+            <connections>
+                <outlet property="messageTextLabel" destination="uxj-Pl-BdS" id="2aT-xI-AUm"/>
+                <outlet property="youImage" destination="Fqm-mI-0iN" id="oBm-d4-efM"/>
+            </connections>
+            <point key="canvasLocation" x="223.18840579710147" y="89.397321428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
