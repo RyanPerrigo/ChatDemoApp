@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../String+Extensions.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Nunito">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

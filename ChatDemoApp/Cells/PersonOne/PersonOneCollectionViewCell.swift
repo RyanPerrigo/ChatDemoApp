@@ -13,14 +13,18 @@ class PersonOneCollectionViewCell: UICollectionViewCell {
 	
 	static let identifier = "personOneCell"
 	
+	@IBOutlet weak var topLevelView: UIView!
 	@IBOutlet weak var meImage: UIImageView!
 	@IBOutlet weak var textLabel: UILabel!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
-        
+		textLabel.font = UIFont(name: "NunitoBold", size: 12)
+		meImage.layer.cornerRadius = 8
 		meImage.image = UIImage(named: "MeImage")
-		self.backgroundColor = UIColor.orange
+		textLabel.textColor = UIColor.black
+		topLevelView.layer.backgroundColor = UIColor.cyan.cgColor
+		
 		
     }
 	

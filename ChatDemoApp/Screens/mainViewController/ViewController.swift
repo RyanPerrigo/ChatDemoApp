@@ -28,7 +28,8 @@ class ViewController: UIViewController, Coordinating {
 	}
 	
 	@objc func didTapButton () {
-		coordinator?.eventOccured(with: .buttonTapped)
+		coordinator?.navigationController?.pushViewController(SecondViewController(), animated: true)
+		//coordinator?.eventOccured(with: .buttonTapped)
 	}
 
 }

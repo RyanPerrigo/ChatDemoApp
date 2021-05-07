@@ -54,13 +54,17 @@ class SecondViewControllerModel {
 		reloadView?()
 	}
 	func onSwapPressed() {
-		switch state.personState {
+		let currentState = state.personState
+		
+		
+		switch currentState {
 		case .personOne:
-			print(state.personState)
+			print("Changing from \(currentState) to Person Two")
 			state.personState = .PersonTWo
-		default:
-			print(state.personState)
+		case .PersonTWo:
+			print("Changing from \(currentState) to Person One")
 			state.personState = .personOne
+			
 		}
 	}
 	

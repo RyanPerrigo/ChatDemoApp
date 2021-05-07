@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="44" id="eCx-jI-9JI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Su-FC-x9c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Su-FC-x9c">
                                 <rect key="frame" x="60" y="0.0" width="235" height="127"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -58,6 +58,7 @@
             <connections>
                 <outlet property="meImage" destination="AAk-60-xiH" id="KYs-Zi-Wog"/>
                 <outlet property="textLabel" destination="6Su-FC-x9c" id="36Q-0t-gkc"/>
+                <outlet property="topLevelView" destination="8y5-FC-K8B" id="0i3-K7-nXI"/>
             </connections>
             <point key="canvasLocation" x="212.31884057971016" y="125.55803571428571"/>
         </collectionViewCell>

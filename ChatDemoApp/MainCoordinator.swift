@@ -13,9 +13,9 @@ class MainCoordinator: Coordinator {
 	var navigationController: UINavigationController?
 	
 	func start() {
-		var vc: UIViewController & Coordinating = ViewController()
+		var vc: UIViewController & Coordinating = MainViewController()
 		vc.coordinator = self
-		
+	// this is how we hide the nav bar default appearance 
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 				 UINavigationBar.appearance().shadowImage = UIImage()
 				 UINavigationBar.appearance().backgroundColor = .clear

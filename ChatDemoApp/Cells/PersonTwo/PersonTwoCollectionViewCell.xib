@@ -20,13 +20,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArE-kJ-zFE">
                         <rect key="frame" x="0.0" y="0.0" width="220" height="115"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxj-Pl-BdS">
-                                <rect key="frame" x="63" y="0.0" width="157" height="115"/>
-                                <string key="text"> so this is what a long text will look like in this box so this is what a long text will look like in this box so this is what a long text will look like in this box so this is what a long text will look like in this box</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqm-mI-0iN">
                                 <rect key="frame" x="10" y="35" width="48" height="45"/>
                                 <constraints>
@@ -34,15 +27,21 @@
                                     <constraint firstAttribute="width" constant="48" id="wHV-dZ-oUm"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucw-ln-hf4">
+                                <rect key="frame" x="68" y="0.0" width="142" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uxj-Pl-BdS" secondAttribute="bottom" id="3Rg-CC-9he"/>
-                            <constraint firstItem="uxj-Pl-BdS" firstAttribute="top" secondItem="ArE-kJ-zFE" secondAttribute="top" id="GAQ-VF-Q9y"/>
                             <constraint firstItem="Fqm-mI-0iN" firstAttribute="leading" secondItem="ArE-kJ-zFE" secondAttribute="leading" constant="10" id="OVT-vd-Ox5"/>
+                            <constraint firstAttribute="trailing" secondItem="Ucw-ln-hf4" secondAttribute="trailing" constant="10" id="YnE-fX-c3H"/>
                             <constraint firstItem="Fqm-mI-0iN" firstAttribute="centerY" secondItem="ArE-kJ-zFE" secondAttribute="centerY" id="dIL-6k-frM"/>
-                            <constraint firstAttribute="trailing" secondItem="uxj-Pl-BdS" secondAttribute="trailing" id="wP6-XY-VAL"/>
-                            <constraint firstItem="uxj-Pl-BdS" firstAttribute="leading" secondItem="Fqm-mI-0iN" secondAttribute="trailing" constant="5" id="xOw-eO-SCR"/>
+                            <constraint firstItem="Ucw-ln-hf4" firstAttribute="leading" secondItem="Fqm-mI-0iN" secondAttribute="trailing" constant="10" id="dRz-Nl-26u"/>
+                            <constraint firstAttribute="bottom" secondItem="Ucw-ln-hf4" secondAttribute="bottom" id="rAd-wW-LVT"/>
+                            <constraint firstItem="Ucw-ln-hf4" firstAttribute="top" secondItem="ArE-kJ-zFE" secondAttribute="top" id="v3h-K3-FH1"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,7 +55,8 @@
             </constraints>
             <size key="customSize" width="220" height="115"/>
             <connections>
-                <outlet property="messageTextLabel" destination="uxj-Pl-BdS" id="2aT-xI-AUm"/>
+                <outlet property="messageTextLabel" destination="Ucw-ln-hf4" id="Eab-Qa-Bgn"/>
+                <outlet property="topLevelView" destination="ArE-kJ-zFE" id="xvH-7R-1OS"/>
                 <outlet property="youImage" destination="Fqm-mI-0iN" id="oBm-d4-efM"/>
             </connections>
             <point key="canvasLocation" x="223.18840579710147" y="89.397321428571431"/>
