@@ -20,7 +20,7 @@ class MainViewController: UIViewController, Coordinating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		button.layer.borderWidth = 1
+		button.layer.borderWidth = 2
 		button.layer.borderColor = UIColor.white.cgColor
 		button.layer.backgroundColor = UIColor.black.cgColor
 		button.layer.cornerRadius = 8
