@@ -66,7 +66,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 			view.addGestureRecognizer(tap)
 
 		//Calls this function when the tap is recognized.
-		
+				
 	}
 	
 	@objc func dismissKeyboard() {
@@ -94,12 +94,16 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 			  fatalError("FAILED TO LOAD ME CELL")
 			}
 			meCell.shadowDecorate(cornerRadius: 4)
+			// set cell message state from person message
+			//meCell.setCellMessage(messageFromPerson: person.message)
+			
 			meCell.setPerson(person: person)
 			return meCell
 		case .PersonTWo:
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonTwoCollectionViewCell.identifier, for: indexPath)
 			guard let youCell = cell as? PersonTwoCollectionViewCell else { fatalError("FAILED TO LOAD YOU CELL")}
 			youCell.setPerson(person: person)
+			//youCell.setCellMessage(messageFromPerson: person.message)
 			youCell.shadowDecorate(cornerRadius: 4)
 			return youCell
 		}
@@ -110,11 +114,13 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 		
 		let person = viewModel.state.getViewModelDisplayState()[indexPath.item]
+		
+		
 
 		let width: CGFloat = UIScreen.main.bounds.width * 0.98
-		let safeFont = UIFont.systemFont(ofSize: 12)
+		let safeFont = UIFont(name: "NunitoBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
 		
-			let height: CGFloat = viewModel.state.getTextFieldState().height(withConstrainedWidth: width, font: safeFont)
+		let height: CGFloat = person.message.height(withConstrainedWidth: width, font: safeFont)
 			
 			switch person.isSelf {
 			case .personOne:
@@ -130,5 +136,11 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		}
 
 	}
-	
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if (text == "\n") {
+			viewModel.onSendButtonClicked()
+			textView.resignFirstResponder()
+			}
+			return true
+	}
 }

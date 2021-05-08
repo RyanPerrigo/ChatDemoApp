@@ -5,7 +5,9 @@
 //  Created by Ryan Perrigo on 5/3/21.
 //
 
-
+protocol ViewModelBased {
+	
+}
 
 import UIKit
 
@@ -25,7 +27,6 @@ class PersonOneCollectionViewCell: UICollectionViewCell {
 		textLabel.textColor = UIColor.black
 		topLevelView.layer.backgroundColor = UIColor.cyan.cgColor
 		
-		
     }
 	
 	func setPerson(person: Person) {
@@ -33,4 +34,6 @@ class PersonOneCollectionViewCell: UICollectionViewCell {
 	}
 	
 }
+
+
 

@@ -10,7 +10,7 @@ import UIKit
 class PersonTwoCollectionViewCell: UICollectionViewCell {
 	
 	static let identifier = "personTwoCell"
-	private let vm = PersonTwoCollectionViewCellModel()
+	
 	
 	@IBOutlet weak var topLevelView: UIView!
 	@IBOutlet weak var messageTextLabel: UILabel!
@@ -25,18 +25,13 @@ class PersonTwoCollectionViewCell: UICollectionViewCell {
 	
 		
 		messageTextLabel.textColor = UIColor.white
-		messageTextLabel.font = UIFont(name: "Nunito-ExtraBold", size: 12)
-		
+		messageTextLabel.font = UIFont(name: "NunitoBold", size: 12)
         // Initialization code
     }
-
+	
+	
 	func setPerson(person: Person) {
 		messageTextLabel.text = person.message
 		
 	}
-}
-
-struct PersonTwoCollectionViewCellModel {
-	
-	var messageText = ""
 }
