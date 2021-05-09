@@ -5,9 +5,6 @@
 //  Created by Ryan Perrigo on 5/3/21.
 //
 
-protocol ViewModelBased {
-	
-}
 
 import UIKit
 

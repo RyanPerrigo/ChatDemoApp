@@ -19,6 +19,9 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 	@IBAction func sendButtonClicked(_ sender: Any) {
 		viewModel.onSendButtonClicked()
 	}
+	@IBOutlet weak var chatStackView: UIStackView!
+	@IBOutlet weak var textInputViewHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var textInputViewBottomConstraint: NSLayoutConstraint!
 	
 	
 	private var viewModel: SecondViewControllerModel = SecondViewControllerModel()
@@ -33,9 +36,17 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		title = "Chatz"
 		navigationItem.backBarButtonItem?.action = #selector(goBack)
 		
-		
+		let startingText = "iChatz"
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: startingText)
+		textField.text = startingText
+		chatStackView.layer.borderWidth = 2
+		chatStackView.layer.borderColor = UIColor.lightGray.cgColor
+		chatStackView.layer.cornerRadius = 12
 		textField.layer.cornerRadius = 4
-		collectionView.backgroundColor = UIColor.lightGray
+		collectionView.backgroundColor = UIColor.darkGray
+		textField.backgroundColor = UIColor.clear
+		textField.textColor = UIColor.lightGray
+		
 		collectionView.register(UINib(nibName:"PersonOneCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:PersonOneCollectionViewCell.identifier)
 		collectionView.register(UINib(nibName:"PersonTwoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:PersonTwoCollectionViewCell.identifier)
 		
@@ -67,15 +78,14 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		inputView?.translatesAutoresizingMaskIntoConstraints = false
 		//
 		let keyboardSize = keyboardFrame.size.height
-		//		let bottomConstraint = NSLayoutConstraint(item: textInputView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -keyboardSize - 50)
-		
-		//	textInputView.addConstraints([bottomConstraint])
+		textInputViewBottomConstraint.constant = keyboardSize
 		
 		print(keyboardSize)
 		
 	}
 	@objc func dismissKeyboard() {
 		//Causes the view (or one of its embedded text fields) to resign the first responder status.
+		textInputViewBottomConstraint.constant = 0
 		view.endEditing(true)
 	}
 	
@@ -125,7 +135,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		let width: CGFloat = UIScreen.main.bounds.width * 0.95
 		let safeFont = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
 		
-		let height: CGFloat = person.message.height(withConstrainedWidth: width, font: safeFont) + 25
+		let height: CGFloat = person.message.height(withConstrainedWidth: width, font: safeFont) + 50
 		
 		switch person.isSelf {
 		case .personOne:
@@ -136,10 +146,25 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 	}
 	func textViewDidChange(_ textView: UITextView) {
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text)
+		
+		
 		if let safeText = textField.text {
 			viewModel.state.setTextFieldState(text: safeText)
 		}
 		
+	}
+	func textViewDidBeginEditing(_ textView: UITextView) {
+		if textView.textColor == .lightGray {
+			textView.text = ""
+			textView.textColor = .white
+		}
+	}
+	func textViewDidEndEditing(_ textView: UITextView) {
+		textView.textColor = .lightGray
+		textView.text = "iChatz"
+		viewModel.state.setTextFieldState(text: "")
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: viewModel.state.getTextFieldState())
 	}
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if (text == "\n") {
@@ -147,5 +172,11 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 			textView.resignFirstResponder()
 		}
 		return true
+	}
+	
+	func setViewHeightToStringSize(constraint: NSLayoutConstraint, string: String) {
+		let font = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+		
+		constraint.constant = string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: font) + 50
 	}
 }
