@@ -22,3 +22,9 @@ extension String {
 		return ceil(boundingBox.width)
 	}
 }
+func setViewHeightToStringSize(constraint: NSLayoutConstraint, string: String, optionalSizeIncrease: CGFloat?) {
+	let font = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+	let safeSize: CGFloat = optionalSizeIncrease ?? 0
+	
+	constraint.constant = string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: font) + 15 + safeSize
+}

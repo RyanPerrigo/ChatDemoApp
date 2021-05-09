@@ -37,8 +37,9 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		navigationItem.backBarButtonItem?.action = #selector(goBack)
 		
 		let startingText = "iChatz"
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: startingText)
 		textField.text = startingText
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 25)
+		
 		chatStackView.layer.borderWidth = 2
 		chatStackView.layer.borderColor = UIColor.lightGray.cgColor
 		chatStackView.layer.cornerRadius = 12
@@ -135,7 +136,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		let width: CGFloat = UIScreen.main.bounds.width * 0.95
 		let safeFont = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
 		
-		let height: CGFloat = person.message.height(withConstrainedWidth: width, font: safeFont) + 50
+		let height: CGFloat = person.message.height(withConstrainedWidth: view.bounds.width, font: safeFont) + 50
 		
 		switch person.isSelf {
 		case .personOne:
@@ -146,12 +147,13 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 	}
 	func textViewDidChange(_ textView: UITextView) {
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text)
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 20)
 		
 		
-		if let safeText = textField.text {
-			viewModel.state.setTextFieldState(text: safeText)
-		}
+		
+		viewModel.state.setTextFieldState(text: textField.text)
+		print(viewModel.state.getTextFieldState())
+		
 		
 	}
 	func textViewDidBeginEditing(_ textView: UITextView) {
@@ -160,11 +162,12 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 			textView.textColor = .white
 		}
 	}
+	
 	func textViewDidEndEditing(_ textView: UITextView) {
 		textView.textColor = .lightGray
 		textView.text = "iChatz"
 		viewModel.state.setTextFieldState(text: "")
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: viewModel.state.getTextFieldState())
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 25)
 	}
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if (text == "\n") {
@@ -174,9 +177,10 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		return true
 	}
 	
-	func setViewHeightToStringSize(constraint: NSLayoutConstraint, string: String) {
+	func setViewHeightToStringSize(constraint: NSLayoutConstraint, string: String, optionalSizeIncrease: CGFloat?) {
 		let font = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+		let safeSize: CGFloat = optionalSizeIncrease ?? 0
 		
-		constraint.constant = string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: font) + 50
+		constraint.constant = string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: font) + 15 + safeSize
 	}
 }
