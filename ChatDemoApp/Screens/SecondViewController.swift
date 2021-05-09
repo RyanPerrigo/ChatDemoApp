@@ -15,14 +15,25 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 	}
 	@IBOutlet weak var textInputView: UIView!
 	@IBOutlet weak var textField: UITextView!
+	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBAction func sendButtonClicked(_ sender: Any) {
 		viewModel.onSendButtonClicked()
+		if textField.text == "" {
+			textField.textColor = .lightGray
+			let defaultString = "iChatz"
+			textField.text = defaultString
+			viewModel.state.setTextFieldState(text: "")
+			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 50)
+		}
+		dismissKeyboard()
 	}
-	@IBOutlet weak var chatStackView: UIStackView!
+	@IBOutlet weak var chatItemsContainerView: UIView!
+	
 	@IBOutlet weak var textInputViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var textInputViewBottomConstraint: NSLayoutConstraint!
 	
+	@IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 	
 	private var viewModel: SecondViewControllerModel = SecondViewControllerModel()
 	var coordinator: Coordinator?
@@ -33,21 +44,21 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "Chatz"
+		title = "iChatz"
 		navigationItem.backBarButtonItem?.action = #selector(goBack)
 		
 		let startingText = "iChatz"
 		textField.text = startingText
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 25)
-		
-		chatStackView.layer.borderWidth = 2
-		chatStackView.layer.borderColor = UIColor.lightGray.cgColor
-		chatStackView.layer.cornerRadius = 12
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 50)
+		//setViewHeightToStringSize(constraint: textFieldHeightConstraint, string: textField.text, optionalSizeIncrease: 25)
+		chatItemsContainerView.layer.borderWidth = 2
+		chatItemsContainerView.layer.borderColor = UIColor.lightGray.cgColor
+		chatItemsContainerView.layer.cornerRadius = 12
 		textField.layer.cornerRadius = 4
-		collectionView.backgroundColor = UIColor.darkGray
+		collectionView.backgroundColor = UIColor.black
 		textField.backgroundColor = UIColor.clear
 		textField.textColor = UIColor.lightGray
-		
+		collectionViewBottomConstraint.constant = textInputViewHeightConstraint.constant
 		collectionView.register(UINib(nibName:"PersonOneCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:PersonOneCollectionViewCell.identifier)
 		collectionView.register(UINib(nibName:"PersonTwoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:PersonTwoCollectionViewCell.identifier)
 		
@@ -60,6 +71,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 		viewModel.resetTextField = {
 			self.textField.text = ""
+			self.viewModel.state.setTextFieldState(text: "")
 		}
 		viewModel.reloadView = {
 			self.collectionView.reloadData()
@@ -80,13 +92,14 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		//
 		let keyboardSize = keyboardFrame.size.height
 		textInputViewBottomConstraint.constant = keyboardSize
-		
+		collectionViewBottomConstraint.constant = keyboardSize + 25
 		print(keyboardSize)
 		
 	}
 	@objc func dismissKeyboard() {
 		//Causes the view (or one of its embedded text fields) to resign the first responder status.
 		textInputViewBottomConstraint.constant = 0
+		collectionViewBottomConstraint.constant = 0
 		view.endEditing(true)
 	}
 	
@@ -147,11 +160,11 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 	}
 	func textViewDidChange(_ textView: UITextView) {
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 20)
+		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 50)
+		//setViewHeightToStringSize(constraint: textFieldHeightConstraint, string: textView.text, optionalSizeIncrease: 25)
 		
 		
-		
-		viewModel.state.setTextFieldState(text: textField.text)
+		viewModel.state.setTextFieldState(text: textView.text)
 		print(viewModel.state.getTextFieldState())
 		
 		
@@ -164,15 +177,22 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 	}
 	
 	func textViewDidEndEditing(_ textView: UITextView) {
-		textView.textColor = .lightGray
-		textView.text = "iChatz"
-		viewModel.state.setTextFieldState(text: "")
-		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 25)
+		
+		if textView.text == "" {
+			textView.textColor = .lightGray
+			let defaultString = "iChatz"
+			textView.text = defaultString
+			viewModel.state.setTextFieldState(text: "")
+			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 50)
+		}
+		
 	}
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if (text == "\n") {
 			viewModel.onSendButtonClicked()
+			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 50)
 			textView.resignFirstResponder()
+			dismissKeyboard()
 		}
 		return true
 	}
