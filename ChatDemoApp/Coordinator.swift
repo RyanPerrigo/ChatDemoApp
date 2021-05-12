@@ -9,6 +9,8 @@ import UIKit
 
 enum Event {
 	case buttonTapped
+	case loginTapped
+	case createNewUserTapped
 }
 
 protocol Coordinator {

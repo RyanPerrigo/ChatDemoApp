@@ -25,12 +25,12 @@
                         <constraint firstAttribute="height" constant="50" id="9bn-q5-spt"/>
                         <constraint firstAttribute="width" constant="100" id="Nw1-l2-xmh"/>
                     </constraints>
-                    <state key="normal" title="GO"/>
+                    <state key="normal" title="Go To ChatVC"/>
                     <connections>
                         <action selector="goButtonTapped:" destination="-1" eventType="touchUpInside" id="24z-rW-Xyb"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHATZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-vS-gfD">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCHATZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyh-vS-gfD">
                     <rect key="frame" x="78" y="179" width="258" height="99"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="99" id="jbi-Z9-0h3"/>
@@ -40,6 +40,11 @@
                     <color key="textColor" name="AccentColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqa-Vi-1x6">
+                    <rect key="frame" x="157" y="730" width="98" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Register/Login"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

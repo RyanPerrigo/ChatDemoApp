@@ -29,9 +29,15 @@ class MainCoordinator: Coordinator {
 	func eventOccured(with type: Event) {
 		switch type {
 		case .buttonTapped:
-			let vc: SecondViewController & Coordinating = SecondViewController()
+			let vc: ChatRoomVC & Coordinating = ChatRoomVC()
 			vc.coordinator = self
 			navigationController?.pushViewController(vc, animated: true)
+		case .createNewUserTapped:
+			let vc: CreateNewUserVC & Coordinating = CreateNewUserVC()
+			vc.coordinator = self
+			navigationController?.pushViewController(vc, animated: true)
+		case .loginTapped:
+			print("loggin Tapped Broo")
 				}
 	}
 	

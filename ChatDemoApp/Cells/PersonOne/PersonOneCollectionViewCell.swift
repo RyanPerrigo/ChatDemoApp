@@ -26,7 +26,7 @@ class PersonOneCollectionViewCell: UICollectionViewCell {
 		
     }
 	
-	func setPerson(person: Person) {
+	func setMessageText(person: Person) {
 		textLabel.text = person.message
 	}
 	

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, Coordinating, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
+class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
 	
 	@IBOutlet var topLevelView: UIView!
 	@IBAction func onSwapPressed(_ sender: Any) {
@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 	
 	@IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 	
-	private var viewModel: SecondViewControllerModel = SecondViewControllerModel()
+	private var viewModel: ChatRoomVM = ChatRoomVM()
 	var coordinator: Coordinator?
 	
 	@objc func goBack() {
@@ -92,7 +92,7 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		//
 		let keyboardSize = keyboardFrame.size.height
 		textInputViewBottomConstraint.constant = keyboardSize
-		collectionViewBottomConstraint.constant = keyboardSize + 25
+		collectionViewBottomConstraint.constant = keyboardSize + 50
 		print(keyboardSize)
 		
 	}
@@ -114,28 +114,65 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		let person = viewModel.state.getViewModelDisplayState()[position]
 		
 		
-		switch person.isSelf {
+		switch person.choosePerson {
 		case .personOne:
+			let dequeCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
+			guard let personOneCell = dequeCell as? PersonOneCollectionViewCell else { fatalError("FAIL TO LOAD PERSON ONE CELL")}
 			
-			let dequeuedCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
-			
-			guard let meCell = dequeuedCell as? PersonOneCollectionViewCell else {
-				fatalError("FAILED TO LOAD ME CELL")
-			}
-			meCell.shadowDecorate(cornerRadius: 4)
-			// set cell message state from person message
-			//meCell.setCellMessage(messageFromPerson: person.message)
-			
-			meCell.setPerson(person: person)
-			return meCell
+			personOneCell.setMessageText(person: person)
+			return personOneCell
 		case .PersonTWo:
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonTwoCollectionViewCell.identifier, for: indexPath)
-			guard let youCell = cell as? PersonTwoCollectionViewCell else { fatalError("FAILED TO LOAD YOU CELL")}
-			youCell.setPerson(person: person)
-			//youCell.setCellMessage(messageFromPerson: person.message)
-			youCell.shadowDecorate(cornerRadius: 4)
-			return youCell
+			let dequeCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonTwoCollectionViewCell.identifier, for: indexPath)
+			guard let personTwoCell = dequeCell as? PersonTwoCollectionViewCell else { fatalError("FAIL TO LOAD PERSON ONE CELL")}
+			
+			personTwoCell.setMessageText(person: person)
+			return personTwoCell
 		}
+		
+//		switch message.choosePerson {
+//		case true:
+//			let dequeuedCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
+//
+//			guard let meCell = dequeuedCell as? PersonOneCollectionViewCell else {
+//				fatalError("FAILED TO LOAD ME CELL")
+//			}
+//			meCell.shadowDecorate(cornerRadius: 4)
+//			// set cell message state from person message
+//			//meCell.setCellMessage(messageFromPerson: person.message)
+//
+//			meCell.setMessageText(messageText: viewModel.getSafePayload(messagePayload: message.messagePayload))
+//			return meCell
+//		case false:
+//
+//			switch viewModel.state.getPersonState(){
+//
+//			case .PersonTWo:
+//				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonTwoCollectionViewCell.identifier, for: indexPath)
+//				guard let youCell = cell as? PersonTwoCollectionViewCell else { fatalError("FAILED TO LOAD YOU CELL")}
+//				youCell.setMessageText(messageText: MessagePayload(messageText: viewModel.state.getTextFieldState()))
+//				//youCell.setCellMessage(messageFromPerson: person.message)
+//				youCell.shadowDecorate(cornerRadius: 4)
+//				return youCell
+//
+//			default:
+//				let dequeuedCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
+//
+//				guard let meCell = dequeuedCell as? PersonOneCollectionViewCell else {
+//					fatalError("FAILED TO LOAD ME CELL")
+//				}
+//				meCell.shadowDecorate(cornerRadius: 4)
+//				// set cell message state from person message
+//				//meCell.setCellMessage(messageFromPerson: person.message)
+//
+//				meCell.setMessageText(messageText: MessagePayload(messageText: viewModel.state.getTextFieldState()))
+//				return meCell
+//			}
+//
+	//	}
+		
+		
+		
+		
 		
 	}
 	
@@ -143,19 +180,16 @@ class SecondViewController: UIViewController, Coordinating, UICollectionViewData
 		
 		
 		let person = viewModel.state.getViewModelDisplayState()[indexPath.item]
-		
-		
-		
 		let width: CGFloat = UIScreen.main.bounds.width * 0.95
 		let safeFont = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
-		
 		let height: CGFloat = person.message.height(withConstrainedWidth: view.bounds.width, font: safeFont) + 50
 		
-		switch person.isSelf {
+		switch person.choosePerson {
 		case .personOne:
+			
 			return CGSize(width:width, height: height)
-		default:
-			return CGSize(width: width, height:height)
+		default :
+			return CGSize(width:width, height: height)
 		}
 		
 	}

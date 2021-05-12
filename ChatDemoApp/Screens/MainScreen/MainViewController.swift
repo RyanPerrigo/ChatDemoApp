@@ -12,7 +12,7 @@ class MainViewController: UIViewController, Coordinating {
 
 	@IBOutlet weak var button: UIButton!
 	@IBAction func goButtonTapped(_ sender: Any) {
-		coordinator?.navigationController?.pushViewController(SecondViewController(), animated: true)
+		coordinator?.navigationController?.pushViewController(ChatRoomVC(), animated: true)
 	}
 	
 	var coordinator: Coordinator?

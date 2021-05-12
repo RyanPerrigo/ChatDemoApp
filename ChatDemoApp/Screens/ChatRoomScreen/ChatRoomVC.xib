@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="ChatDemoApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatRoomVC" customModule="ChatDemoApp" customModuleProvider="target">
             <connections>
                 <outlet property="chatItemsContainerView" destination="E6x-yU-hwe" id="cur-k0-y4O"/>
                 <outlet property="collectionView" destination="BpE-ux-Nee" id="U5u-8e-TAh"/>

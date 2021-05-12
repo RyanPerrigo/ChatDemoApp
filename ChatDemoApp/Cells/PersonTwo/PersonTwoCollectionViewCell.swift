@@ -30,7 +30,7 @@ class PersonTwoCollectionViewCell: UICollectionViewCell {
     }
 	
 	
-	func setPerson(person: Person) {
+	func setMessageText(person: Person) {
 		messageTextLabel.text = person.message
 		
 	}

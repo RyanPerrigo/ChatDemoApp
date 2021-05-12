@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */; };
-		4BB53A64264496BD00804906 /* PersonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A63264496BC00804906 /* PersonOne.swift */; };
+		4BB53A622641AE8A00804906 /* ChatRoomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A612641AE8A00804906 /* ChatRoomVM.swift */; };
 		4BB53A6926458D6800804906 /* PersonTwoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6726458D6800804906 /* PersonTwoCollectionViewCell.swift */; };
 		4BB53A6A26458D6800804906 /* PersonTwoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A6826458D6800804906 /* PersonTwoCollectionViewCell.xib */; };
 		4BB53A6C264596D200804906 /* ChoosePerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A6B264596D200804906 /* ChoosePerson.swift */; };
@@ -17,6 +16,14 @@
 		4BB53A792645E8E200804906 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */; };
 		4BB53A7B2645F0A900804906 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A7A2645F0A900804906 /* String+Extensions.swift */; };
 		4BB53A7E2646072D00804906 /* Nunito in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A7D2646072D00804906 /* Nunito */; };
+		4BB53A80264859BF00804906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A7F264859BE00804906 /* GoogleService-Info.plist */; };
+		4BB53A8426486D7100804906 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A8326486D7100804906 /* APIManager.swift */; };
+		4BB53A86264B059B00804906 /* ChatRoomCodableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A85264B059A00804906 /* ChatRoomCodableEntity.swift */; };
+		4BB53A89264B4AEE00804906 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A88264B4AEE00804906 /* K.swift */; };
+		4BB53A8C264B4C5500804906 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A8B264B4C5500804906 /* ChatManager.swift */; };
+		4BB53A91264C2F7300804906 /* CreateNewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A8F264C2F7300804906 /* CreateNewUserVC.swift */; };
+		4BB53A92264C2F7300804906 /* CreateNewUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A90264C2F7300804906 /* CreateNewUserVC.xib */; };
+		4BB53A94264C2FAD00804906 /* CreateNewUserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A93264C2FAD00804906 /* CreateNewUserVM.swift */; };
 		4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC72263F9360009586DD /* AppDelegate.swift */; };
 		4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC74263F9360009586DD /* SceneDelegate.swift */; };
 		4BD2BC77263F9360009586DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC76263F9360009586DD /* ViewController.swift */; };
@@ -26,8 +33,8 @@
 		4BD2BC95263F9365009586DD /* ChatDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC94263F9365009586DD /* ChatDemoAppUITests.swift */; };
 		4BD2BCA9263F9459009586DD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCA8263F9459009586DD /* Coordinator.swift */; };
 		4BD2BCAE26406753009586DD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCAD26406753009586DD /* MainCoordinator.swift */; };
-		4BD2BCB426408123009586DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB226408123009586DD /* SecondViewController.swift */; };
-		4BD2BCB526408123009586DD /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB326408123009586DD /* SecondViewController.xib */; };
+		4BD2BCB426408123009586DD /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB226408123009586DD /* ChatRoomVC.swift */; };
+		4BD2BCB526408123009586DD /* ChatRoomVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BCB326408123009586DD /* ChatRoomVC.xib */; };
 		4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */; };
 		4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -50,8 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerModel.swift; sourceTree = "<group>"; };
-		4BB53A63264496BC00804906 /* PersonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOne.swift; sourceTree = "<group>"; };
+		4BB53A612641AE8A00804906 /* ChatRoomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVM.swift; sourceTree = "<group>"; };
 		4BB53A6726458D6800804906 /* PersonTwoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTwoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BB53A6826458D6800804906 /* PersonTwoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTwoCollectionViewCell.xib; sourceTree = "<group>"; };
 		4BB53A6B264596D200804906 /* ChoosePerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePerson.swift; sourceTree = "<group>"; };
@@ -60,6 +66,14 @@
 		4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		4BB53A7A2645F0A900804906 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4BB53A7D2646072D00804906 /* Nunito */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito; sourceTree = "<group>"; };
+		4BB53A7F264859BE00804906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BB53A8326486D7100804906 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4BB53A85264B059A00804906 /* ChatRoomCodableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCodableEntity.swift; sourceTree = "<group>"; };
+		4BB53A88264B4AEE00804906 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		4BB53A8B264B4C5500804906 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		4BB53A8F264C2F7300804906 /* CreateNewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserVC.swift; sourceTree = "<group>"; };
+		4BB53A90264C2F7300804906 /* CreateNewUserVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewUserVC.xib; sourceTree = "<group>"; };
+		4BB53A93264C2FAD00804906 /* CreateNewUserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserVM.swift; sourceTree = "<group>"; };
 		4BD2BC6F263F9360009586DD /* ChatDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC72263F9360009586DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC74263F9360009586DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +89,8 @@
 		4BD2BC96263F9365009586DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD2BCA8263F9459009586DD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BD2BCAD26406753009586DD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		4BD2BCB226408123009586DD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		4BD2BCB326408123009586DD /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		4BD2BCB226408123009586DD /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
+		4BD2BCB326408123009586DD /* ChatRoomVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomVC.xib; sourceTree = "<group>"; };
 		4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonOneCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonOneCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,19 +134,18 @@
 			children = (
 				4BD2BCBA26409C5A009586DD /* PersonOneCollectionViewCell.swift */,
 				4BD2BCBB26409C5A009586DD /* PersonOneCollectionViewCell.xib */,
-				4BB53A63264496BC00804906 /* PersonOne.swift */,
 			);
 			path = PersonOne;
 			sourceTree = "<group>";
 		};
-		4BB53A6D2645B47600804906 /* mainViewController */ = {
+		4BB53A6D2645B47600804906 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
 				4BD2BC76263F9360009586DD /* ViewController.swift */,
 				4BB53A6E2645B52100804906 /* MainViewController.swift */,
 				4BB53A6F2645B52100804906 /* MainViewController.xib */,
 			);
-			path = mainViewController;
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		4BB53A772645E80100804906 /* Extensions */ = {
@@ -150,6 +163,60 @@
 				4BB53A7D2646072D00804906 /* Nunito */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4BB53A8126486D4D00804906 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A8A264B4C4700804906 /* ChatManager */,
+				4BB53A8226486D5A00804906 /* APIManager */,
+				4BB53A85264B059A00804906 /* ChatRoomCodableEntity.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4BB53A8226486D5A00804906 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A8326486D7100804906 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		4BB53A87264B4AD600804906 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A88264B4AEE00804906 /* K.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4BB53A8A264B4C4700804906 /* ChatManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A8B264B4C5500804906 /* ChatManager.swift */,
+			);
+			path = ChatManager;
+			sourceTree = "<group>";
+		};
+		4BB53A8D264C2EE700804906 /* CreateNewUserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BB53A8F264C2F7300804906 /* CreateNewUserVC.swift */,
+				4BB53A90264C2F7300804906 /* CreateNewUserVC.xib */,
+				4BB53A93264C2FAD00804906 /* CreateNewUserVM.swift */,
+			);
+			path = CreateNewUserScreen;
+			sourceTree = "<group>";
+		};
+		4BB53A8E264C2F1B00804906 /* ChatRoomScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2BCB226408123009586DD /* ChatRoomVC.swift */,
+				4BD2BCB326408123009586DD /* ChatRoomVC.xib */,
+				4BB53A612641AE8A00804906 /* ChatRoomVM.swift */,
+			);
+			path = ChatRoomScreen;
 			sourceTree = "<group>";
 		};
 		4BD2BC66263F9360009586DD = {
@@ -175,6 +242,8 @@
 		4BD2BC71263F9360009586DD /* ChatDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BB53A87264B4AD600804906 /* Constants */,
+				4BB53A8126486D4D00804906 /* Managers */,
 				4BB53A7C2646065B00804906 /* Fonts */,
 				4BB53A772645E80100804906 /* Extensions */,
 				4BD2BCC12640A2B7009586DD /* Screens */,
@@ -184,6 +253,7 @@
 				4BD2BC7B263F9364009586DD /* Assets.xcassets */,
 				4BD2BC7D263F9364009586DD /* LaunchScreen.storyboard */,
 				4BD2BC80263F9364009586DD /* Info.plist */,
+				4BB53A7F264859BE00804906 /* GoogleService-Info.plist */,
 				4BD2BCA8263F9459009586DD /* Coordinator.swift */,
 				4BD2BCAD26406753009586DD /* MainCoordinator.swift */,
 			);
@@ -220,10 +290,9 @@
 		4BD2BCC12640A2B7009586DD /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4BB53A6D2645B47600804906 /* mainViewController */,
-				4BD2BCB226408123009586DD /* SecondViewController.swift */,
-				4BD2BCB326408123009586DD /* SecondViewController.xib */,
-				4BB53A612641AE8A00804906 /* SecondViewControllerModel.swift */,
+				4BB53A8E264C2F1B00804906 /* ChatRoomScreen */,
+				4BB53A8D264C2EE700804906 /* CreateNewUserScreen */,
+				4BB53A6D2645B47600804906 /* MainScreen */,
 				4BB53A6B264596D200804906 /* ChoosePerson.swift */,
 			);
 			path = Screens;
@@ -333,12 +402,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB53A7E2646072D00804906 /* Nunito in Resources */,
+				4BB53A80264859BF00804906 /* GoogleService-Info.plist in Resources */,
 				4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */,
 				4BB53A712645B52100804906 /* MainViewController.xib in Resources */,
 				4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */,
 				4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */,
+				4BB53A92264C2F7300804906 /* CreateNewUserVC.xib in Resources */,
 				4BB53A6A26458D6800804906 /* PersonTwoCollectionViewCell.xib in Resources */,
-				4BD2BCB526408123009586DD /* SecondViewController.xib in Resources */,
+				4BD2BCB526408123009586DD /* ChatRoomVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +435,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB53A792645E8E200804906 /* UICollectionViewCell+Extensions.swift in Sources */,
-				4BD2BCB426408123009586DD /* SecondViewController.swift in Sources */,
+				4BD2BCB426408123009586DD /* ChatRoomVC.swift in Sources */,
 				4BD2BCA9263F9459009586DD /* Coordinator.swift in Sources */,
+				4BB53A8C264B4C5500804906 /* ChatManager.swift in Sources */,
+				4BB53A89264B4AEE00804906 /* K.swift in Sources */,
 				4BD2BC77263F9360009586DD /* ViewController.swift in Sources */,
 				4BB53A702645B52100804906 /* MainViewController.swift in Sources */,
 				4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */,
@@ -373,9 +446,12 @@
 				4BB53A6C264596D200804906 /* ChoosePerson.swift in Sources */,
 				4BB53A7B2645F0A900804906 /* String+Extensions.swift in Sources */,
 				4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */,
+				4BB53A91264C2F7300804906 /* CreateNewUserVC.swift in Sources */,
+				4BB53A86264B059B00804906 /* ChatRoomCodableEntity.swift in Sources */,
 				4BD2BCAE26406753009586DD /* MainCoordinator.swift in Sources */,
-				4BB53A622641AE8A00804906 /* SecondViewControllerModel.swift in Sources */,
-				4BB53A64264496BD00804906 /* PersonOne.swift in Sources */,
+				4BB53A622641AE8A00804906 /* ChatRoomVM.swift in Sources */,
+				4BB53A94264C2FAD00804906 /* CreateNewUserVM.swift in Sources */,
+				4BB53A8426486D7100804906 /* APIManager.swift in Sources */,
 				4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
