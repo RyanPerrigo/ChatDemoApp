@@ -19,13 +19,6 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBAction func sendButtonClicked(_ sender: Any) {
 		viewModel.onSendButtonClicked()
-		if textField.text == "" {
-			textField.textColor = .lightGray
-			let defaultString = "iChatz"
-			textField.text = defaultString
-			viewModel.state.setTextFieldState(text: "")
-			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 50)
-		}
 		dismissKeyboard()
 	}
 	@IBOutlet weak var chatItemsContainerView: UIView!
@@ -44,13 +37,12 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "iChatz"
+		title = K.chatPlaceHolderText
 		navigationItem.backBarButtonItem?.action = #selector(goBack)
 		
-		let startingText = "iChatz"
-		textField.text = startingText
+		textField.text = K.chatPlaceHolderText
 		setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 50)
-		//setViewHeightToStringSize(constraint: textFieldHeightConstraint, string: textField.text, optionalSizeIncrease: 25)
+		
 		chatItemsContainerView.layer.borderWidth = 2
 		chatItemsContainerView.layer.borderColor = UIColor.lightGray.cgColor
 		chatItemsContainerView.layer.cornerRadius = 12
@@ -76,14 +68,21 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		viewModel.reloadView = {
 			self.collectionView.reloadData()
 		}
+		viewModel.state.updateDisplayCallBack = {
+			self.collectionView.reloadData()
+		}
 		let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 		
 		view.addGestureRecognizer(tap)
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidEngage), name: UIResponder.keyboardDidShowNotification, object: nil)
 		//Calls this function when the tap is recognized.
-		
+//		let item = self.collectionView(self.collectionView, numberOfItemsInSection: 0) - 1
+//		let lastItemIndex = IndexPath(item: item, section: 0)
+//		self.collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
 	}
+	
+	
 	@objc func keyboardDidEngage(notification: NSNotification) {
 		guard let info = notification.userInfo else {return}
 		guard let viewContainer = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
@@ -92,7 +91,7 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		//
 		let keyboardSize = keyboardFrame.size.height
 		textInputViewBottomConstraint.constant = keyboardSize
-		collectionViewBottomConstraint.constant = keyboardSize + 50
+		collectionViewBottomConstraint.constant = keyboardSize + 75
 		print(keyboardSize)
 		
 	}
@@ -101,6 +100,13 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		textInputViewBottomConstraint.constant = 0
 		collectionViewBottomConstraint.constant = 0
 		view.endEditing(true)
+		if textField.text == "" {
+			textField.textColor = .lightGray
+			textField.text = K.chatPlaceHolderText
+			viewModel.state.setTextFieldState(text: "")
+			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textField.text, optionalSizeIncrease: 50)
+		}
+
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
