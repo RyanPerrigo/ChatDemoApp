@@ -17,7 +17,6 @@
 		4BB53A712645B52100804906 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A6F2645B52100804906 /* MainViewController.xib */; };
 		4BB53A792645E8E200804906 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */; };
 		4BB53A7B2645F0A900804906 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A7A2645F0A900804906 /* String+Extensions.swift */; };
-		4BB53A7E2646072D00804906 /* Nunito in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A7D2646072D00804906 /* Nunito */; };
 		4BB53A80264859BF00804906 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB53A7F264859BE00804906 /* GoogleService-Info.plist */; };
 		4BB53A8426486D7100804906 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A8326486D7100804906 /* APIManager.swift */; };
 		4BB53A86264B059B00804906 /* ChatRoomCodableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A85264B059A00804906 /* ChatRoomCodableEntity.swift */; };
@@ -28,9 +27,9 @@
 		4BB53A94264C2FAD00804906 /* CreateNewUserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A93264C2FAD00804906 /* CreateNewUserVM.swift */; };
 		4BB53A97264DFF0E00804906 /* PayloadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A96264DFF0E00804906 /* PayloadType.swift */; };
 		4BB53A99264E192700804906 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB53A98264E192600804906 /* Data+Extensions.swift */; };
+		4BCE15792652F59D00D28B51 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BCE156F2652F49500D28B51 /* Nunito-SemiBold.ttf */; };
 		4BD2BC73263F9360009586DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC72263F9360009586DD /* AppDelegate.swift */; };
 		4BD2BC75263F9360009586DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC74263F9360009586DD /* SceneDelegate.swift */; };
-		4BD2BC77263F9360009586DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC76263F9360009586DD /* ViewController.swift */; };
 		4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BC7B263F9364009586DD /* Assets.xcassets */; };
 		4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD2BC7D263F9364009586DD /* LaunchScreen.storyboard */; };
 		4BD2BC8A263F9365009586DD /* ChatDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2BC89263F9365009586DD /* ChatDemoAppTests.swift */; };
@@ -71,7 +70,6 @@
 		4BB53A6F2645B52100804906 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4BB53A782645E8E200804906 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		4BB53A7A2645F0A900804906 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		4BB53A7D2646072D00804906 /* Nunito */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito; sourceTree = "<group>"; };
 		4BB53A7F264859BE00804906 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BB53A8326486D7100804906 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		4BB53A85264B059A00804906 /* ChatRoomCodableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCodableEntity.swift; sourceTree = "<group>"; };
@@ -82,10 +80,24 @@
 		4BB53A93264C2FAD00804906 /* CreateNewUserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewUserVM.swift; sourceTree = "<group>"; };
 		4BB53A96264DFF0E00804906 /* PayloadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadType.swift; sourceTree = "<group>"; };
 		4BB53A98264E192600804906 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		4BCE156A2652F49500D28B51 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		4BCE156B2652F49500D28B51 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		4BCE156C2652F49500D28B51 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		4BCE156D2652F49500D28B51 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		4BCE156E2652F49500D28B51 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		4BCE156F2652F49500D28B51 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		4BCE15702652F49500D28B51 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		4BCE15712652F49500D28B51 /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4BCE15722652F49500D28B51 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		4BCE15732652F49500D28B51 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		4BCE15742652F49500D28B51 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		4BCE15752652F49500D28B51 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		4BCE15762652F49500D28B51 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		4BCE15772652F49500D28B51 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		4BCE15782652F49500D28B51 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		4BD2BC6F263F9360009586DD /* ChatDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD2BC72263F9360009586DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD2BC74263F9360009586DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4BD2BC76263F9360009586DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BD2BC7B263F9364009586DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD2BC7E263F9364009586DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD2BC80263F9364009586DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,7 +171,6 @@
 		4BB53A6D2645B47600804906 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4BD2BC76263F9360009586DD /* ViewController.swift */,
 				4BB53A6E2645B52100804906 /* MainViewController.swift */,
 				4BB53A6F2645B52100804906 /* MainViewController.xib */,
 			);
@@ -179,7 +190,7 @@
 		4BB53A7C2646065B00804906 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4BB53A7D2646072D00804906 /* Nunito */,
+				4BCE15692652F49500D28B51 /* Nunito */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -247,6 +258,28 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		4BCE15692652F49500D28B51 /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				4BCE156A2652F49500D28B51 /* Nunito-ExtraBoldItalic.ttf */,
+				4BCE156B2652F49500D28B51 /* Nunito-ExtraBold.ttf */,
+				4BCE156C2652F49500D28B51 /* Nunito-ExtraLightItalic.ttf */,
+				4BCE156D2652F49500D28B51 /* Nunito-Light.ttf */,
+				4BCE156E2652F49500D28B51 /* Nunito-Regular.ttf */,
+				4BCE156F2652F49500D28B51 /* Nunito-SemiBold.ttf */,
+				4BCE15702652F49500D28B51 /* Nunito-Bold.ttf */,
+				4BCE15712652F49500D28B51 /* Nunito-BoldItalic.ttf */,
+				4BCE15722652F49500D28B51 /* Nunito-Black.ttf */,
+				4BCE15732652F49500D28B51 /* Nunito-ExtraLight.ttf */,
+				4BCE15742652F49500D28B51 /* Nunito-SemiBoldItalic.ttf */,
+				4BCE15752652F49500D28B51 /* Nunito-BlackItalic.ttf */,
+				4BCE15762652F49500D28B51 /* OFL.txt */,
+				4BCE15772652F49500D28B51 /* Nunito-Italic.ttf */,
+				4BCE15782652F49500D28B51 /* Nunito-LightItalic.ttf */,
+			);
+			path = Nunito;
+			sourceTree = "<group>";
+		};
 		4BD2BC66263F9360009586DD = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +303,10 @@
 		4BD2BC71263F9360009586DD /* ChatDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BB53A7C2646065B00804906 /* Fonts */,
 				4B393341265093AB009D743A /* ResponseEntities */,
 				4BB53A87264B4AD600804906 /* Constants */,
 				4BB53A8126486D4D00804906 /* Managers */,
-				4BB53A7C2646065B00804906 /* Fonts */,
 				4BB53A772645E80100804906 /* Extensions */,
 				4BD2BCC12640A2B7009586DD /* Screens */,
 				4BD2BCB926409C20009586DD /* Cells */,
@@ -429,10 +462,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BB53A7E2646072D00804906 /* Nunito in Resources */,
 				4BB53A80264859BF00804906 /* GoogleService-Info.plist in Resources */,
 				4BD2BCBD26409C5A009586DD /* PersonOneCollectionViewCell.xib in Resources */,
 				4BB53A712645B52100804906 /* MainViewController.xib in Resources */,
+				4BCE15792652F59D00D28B51 /* Nunito-SemiBold.ttf in Resources */,
 				4BD2BC7F263F9364009586DD /* LaunchScreen.storyboard in Resources */,
 				4BD2BC7C263F9364009586DD /* Assets.xcassets in Resources */,
 				4BB53A92264C2F7300804906 /* CreateNewUserVC.xib in Resources */,
@@ -469,7 +502,6 @@
 				4BB53A97264DFF0E00804906 /* PayloadType.swift in Sources */,
 				4BB53A89264B4AEE00804906 /* K.swift in Sources */,
 				4B393343265093CF009D743A /* DecodedArray.swift in Sources */,
-				4BD2BC77263F9360009586DD /* ViewController.swift in Sources */,
 				4BB53A702645B52100804906 /* MainViewController.swift in Sources */,
 				4BD2BCBC26409C5A009586DD /* PersonOneCollectionViewCell.swift in Sources */,
 				4BB53A6926458D6800804906 /* PersonTwoCollectionViewCell.swift in Sources */,

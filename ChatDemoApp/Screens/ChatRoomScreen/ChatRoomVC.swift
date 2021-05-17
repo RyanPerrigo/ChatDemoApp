@@ -76,13 +76,12 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		view.addGestureRecognizer(tap)
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidEngage), name: UIResponder.keyboardDidShowNotification, object: nil)
-		//Calls this function when the tap is recognized.
-//		let item = self.collectionView(self.collectionView, numberOfItemsInSection: 0) - 1
-//		let lastItemIndex = IndexPath(item: item, section: 0)
-//		self.collectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisEngage), name: UIResponder.keyboardDidHideNotification, object: nil)
 	}
 	
-	
+	@objc func keyboardDidDisEngage() {
+		dismissKeyboard()
+	}
 	@objc func keyboardDidEngage(notification: NSNotification) {
 		guard let info = notification.userInfo else {return}
 		guard let viewContainer = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
@@ -135,50 +134,6 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 			return personTwoCell
 		}
 		
-//		switch message.choosePerson {
-//		case true:
-//			let dequeuedCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
-//
-//			guard let meCell = dequeuedCell as? PersonOneCollectionViewCell else {
-//				fatalError("FAILED TO LOAD ME CELL")
-//			}
-//			meCell.shadowDecorate(cornerRadius: 4)
-//			// set cell message state from person message
-//			//meCell.setCellMessage(messageFromPerson: person.message)
-//
-//			meCell.setMessageText(messageText: viewModel.getSafePayload(messagePayload: message.messagePayload))
-//			return meCell
-//		case false:
-//
-//			switch viewModel.state.getPersonState(){
-//
-//			case .PersonTWo:
-//				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonTwoCollectionViewCell.identifier, for: indexPath)
-//				guard let youCell = cell as? PersonTwoCollectionViewCell else { fatalError("FAILED TO LOAD YOU CELL")}
-//				youCell.setMessageText(messageText: MessagePayload(messageText: viewModel.state.getTextFieldState()))
-//				//youCell.setCellMessage(messageFromPerson: person.message)
-//				youCell.shadowDecorate(cornerRadius: 4)
-//				return youCell
-//
-//			default:
-//				let dequeuedCell = collectionView.dequeueReusableCell(withReuseIdentifier: PersonOneCollectionViewCell.identifier, for: indexPath)
-//
-//				guard let meCell = dequeuedCell as? PersonOneCollectionViewCell else {
-//					fatalError("FAILED TO LOAD ME CELL")
-//				}
-//				meCell.shadowDecorate(cornerRadius: 4)
-//				// set cell message state from person message
-//				//meCell.setCellMessage(messageFromPerson: person.message)
-//
-//				meCell.setMessageText(messageText: MessagePayload(messageText: viewModel.state.getTextFieldState()))
-//				return meCell
-//			}
-//
-	//	}
-		
-		
-		
-		
 		
 	}
 	
@@ -187,7 +142,8 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		
 		let person = viewModel.state.getViewModelDisplayState()[indexPath.item]
 		let width: CGFloat = UIScreen.main.bounds.width * 0.95
-		let safeFont = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+		guard let safeFont = UIFont(name: K.CustomFonts.customSemiBold, size: 12) else {fatalError("Failed to get font at sizeForItemAt")}
+
 		let height: CGFloat = person.message.height(withConstrainedWidth: view.bounds.width, font: safeFont) + 50
 		
 		switch person.choosePerson {
@@ -238,7 +194,8 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 	}
 	
 	func setViewHeightToStringSize(constraint: NSLayoutConstraint, string: String, optionalSizeIncrease: CGFloat?) {
-		let font = UIFont(name: "Nunito-ExtraBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+		
+		guard let font = UIFont(name: K.CustomFonts.customSemiBold, size: 12) else {fatalError("NO FONT AGAIN")}
 		let safeSize: CGFloat = optionalSizeIncrease ?? 0
 		
 		constraint.constant = string.height(withConstrainedWidth: UIScreen.main.bounds.width, font: font) + 15 + safeSize

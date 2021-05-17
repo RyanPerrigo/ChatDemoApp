@@ -11,7 +11,7 @@ import UIKit
 class MainCoordinator: Coordinator {
 	
 	var navigationController: UINavigationController?
-	
+// intial func called when the coordinator starts from the storyboard.
 	func start() {
 		var vc: UIViewController & Coordinating = MainViewController()
 		vc.coordinator = self
@@ -37,6 +37,7 @@ class MainCoordinator: Coordinator {
 			vc.coordinator = self
 			navigationController?.pushViewController(vc, animated: true)
 		case .loginTapped:
+			// need to set up login page vc stuff
 			print("loggin Tapped Broo")
 				}
 	}

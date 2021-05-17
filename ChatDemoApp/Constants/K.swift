@@ -5,7 +5,7 @@
 //  Created by Ryan Perrigo on 5/11/21.
 //
 
-import Foundation
+import UIKit
 
 
 struct K {
@@ -13,6 +13,11 @@ struct K {
 	static let get = "GET"
 	static let push = "PUSH"
 	static let chatPlaceHolderText = "iChatz"
+	
+	struct CustomFonts {
+		static let customExtraBoldFont = "Custom-ExtraBold"
+		static let customSemiBold = "Nunito-SemiBold"
+	}
 }
 
 struct MessageType {
@@ -26,4 +31,5 @@ struct URLENDPOINTS {
 	static let individualChatroomMessages = base + "/chatrooms/0/messages.json"
 	static let topLevel = base + "/.json"
 }
+
 
