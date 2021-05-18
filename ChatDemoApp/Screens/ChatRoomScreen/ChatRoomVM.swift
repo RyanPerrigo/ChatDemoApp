@@ -16,7 +16,7 @@ struct ChatRoomVCState {
 	private var isSelf: Bool = true
 	private var payloadType: PayloadType = .message
 	var updateDisplayCallBack: (()->Void)?
-
+	
 	
 	mutating func setTextFieldState(text: String) {
 		self.textFieldState = text
@@ -24,11 +24,10 @@ struct ChatRoomVCState {
 	
 	mutating func addViewModelToDisplayState(person: Person) {
 		viewModelDisplayState.append(person)
-		updateDisplayCallBack!()
+		
 	}
 	mutating func setViewModelDisplayStateArray(arrayOfPerson: [Person]) {
 		viewModelDisplayState = arrayOfPerson
-		updateDisplayCallBack!()
 	}
 	
 	mutating func setPersonState(choosePerson: ChoosePerson) {
@@ -89,55 +88,14 @@ class ChatRoomVM {
 	var resetTextField: (()->Void)?
 	
 	func onSendButtonClicked() {
-		
-		postNewChatMessage()
-
-//				let person: [Person] = safeData.messages.compactMap { chatMessage in
-//					let person = Person(
-////						user: User(
-////							isSelf: chatMessage.user.isSelf,
-////							uuid: chatMessage.user.uuid,
-////							messages: chatMessage.user.messages
-////						),
-//						choosePerson: getIsSelf(isSelf: chatMessage.user.isSelf),
-//						message: chatMessage.messagePayload.messagePayload!.messageText
-//					)
-//					return person
-//				}
-//				person.forEach { person in
-//					state.addViewModelToDisplayState(person: person)
-//					self.reloadView!()
-//				}
-//			}
-//		}
-
-		//let person = Person(user: User(isSelf: state.getIsSelfState(), uuid: String(describing: UUID()), messages: []), choosePerson: state.getPersonState(), message: state.getTextFieldState())
-		
-		
-//		switch state.getPersonState() {
-//		case .personOne:
-//
-//			state.addViewModelToDisplayState(person: person)
-//		case .PersonTWo:
-//			state.addViewModelToDisplayState(person: person)
-//		}
+		let messagePayload = MessageTypePayload(messageText: state.getTextFieldState())
+		let chatMessage = createNewChatMessageWithPayloadType (messageTypePayload: messagePayload, imageTypePayload: nil, messsageType: MessageType.text)
+		postNewChatMessage(chatMessage: chatMessage)
 		
 		
 		
-	
 	}
 	
-	
-	// This function is used to determine wether or not the sender is the device user or any other user
-	
-	
-//	func getChoosePersonFromResponse(isSelf: Bool) -> ChoosePerson{
-//		if isSelf {
-//			return .personOne
-//		} else {
-//			return .PersonTWo
-//		}
-//	}
 	
 	func onSwapPressed() {
 		let currentState = state.getPersonState()
@@ -162,9 +120,9 @@ class ChatRoomVM {
 			imageTypePayload: imageTypePayload
 		)
 		let user = User(
-					  isSelf: state.getIsSelfState(),
-					  userUUID: String(describing: UUID()),
-					  userMessages: [payload]
+			isSelf: state.getIsSelfState(),
+			userUUID: String(describing: UUID()),
+			userMessages: [payload]
 		)
 		let chatMessage = ChatMessage(
 			user: user,
@@ -178,7 +136,7 @@ class ChatRoomVM {
 				imageTypePayload: imageTypePayload)
 		)
 		
-	
+		
 		return chatMessage
 	}
 	
@@ -201,76 +159,64 @@ class ChatRoomVM {
 	
 	
 	// handles posting of a new chatroom at the topLevel entity
-	func postNewChatMessage() {
-		let payload = MessageTypePayload(messageText: state.getTextFieldState())
-		let chatMessage = createNewChatMessageWithPayloadType (messageTypePayload: payload, imageTypePayload: nil, messsageType: MessageType.text)
+	func postNewChatMessage(chatMessage: ChatMessage) {
+		
 		let encoder = JSONEncoder()
 		
 		guard let newChatMessage = try? encoder.encode(chatMessage) else {return}
-		apiHandler.postNewChatMessage(data: newChatMessage) {
-					print("POSTED NEW CHAT MESSAGE LIKE MALONE !! ----")
-			
-			
-			
-					self.apiHandler.getMessagesFromChatRoom { arrayOfMessages in
 		
-						print(arrayOfMessages.self.prettyPrintedJSONString!)
-						
-						let decoder = JSONDecoder()
-						guard let safeData = try? decoder.decode(DecodedArray<ReturnedChatMessages>.self, from: arrayOfMessages) else { print("COULDNT DECODE CHAT MESSAGE RESPONSE ENTITY FROM CHATROOM");return}
-						let decodedArray = safeData.getArray()
+		
+		apiHandler.postNewChatMessage(data: newChatMessage) {
+			print("POSTED NEW CHAT MESSAGE LIKE MALONE !! ----")
 			
-						decodedArray.forEach { [self] returnedChatMessage in
+			
+			
+			self.apiHandler.getMessagesFromChatRoom { [self] arrayOfMessages in
+				
+				print(arrayOfMessages.self.prettyPrintedJSONString!)
+				
+				let decoder = JSONDecoder()
+				guard let safeData = try? decoder.decode(DecodedArray<ReturnedChatMessages>.self, from: arrayOfMessages) else { print("COULDNT DECODE CHAT MESSAGE RESPONSE ENTITY FROM CHATROOM");return}
+				let decodedArray = safeData.getArray()
+				
+				
+				let arrayOfPeople: [Person] = decodedArray.map { [self] returnedChatMessage in
+					
+					let senderIsSelf = checkSelf(messageSent: chatMessage, responseMessageFromServer: returnedChatMessage)
+					let messagetype = checkMessageType(responseMessageFromServer: returnedChatMessage)
+					
+					if senderIsSelf {
+						
+						switch messagetype {
+						case .image:
+							let person = Person(choosePerson: .personOne, message: returnedChatMessage.chatMessagePayload.imageTypePayload!.imageUrl)
+							return person
 							
-							let senderIsSelf = self.checkSelf(messageSent: chatMessage, responseMessageFromServer: returnedChatMessage)
-							
-							if senderIsSelf {
-								
-								switch self.checkMessageType(responseMessageFromServer: returnedChatMessage) {
-								case .message:
-									let person = Person(choosePerson: .personOne, message: returnedChatMessage.chatMessagePayload.messageTypePayload!.messageText)
-									DispatchQueue.main.async {
-										self.state.addViewModelToDisplayState(person: person)
-										self.resetTextField?()
-										self.reloadView!()
-									}
-									
-								case .image:
-									let person = Person(choosePerson: .personOne, message: returnedChatMessage.chatMessagePayload.imageTypePayload!.imageUrl)
-									DispatchQueue.main.async {
-										self.state.addViewModelToDisplayState(person: person)
-										resetTextField?()
-										self.reloadView!()
-									}
-									
-								}
-								
-								
-							} else {
-								switch self.checkMessageType(responseMessageFromServer: returnedChatMessage) {
-								case .message:
-									let person = Person(choosePerson: .PersonTWo, message: returnedChatMessage.chatMessagePayload.messageTypePayload!.messageText)
-									DispatchQueue.main.async {
-										self.state.addViewModelToDisplayState(person: person)
-										resetTextField?()
-										self.reloadView!()
-									}
-									
-								case .image:
-									let person = Person(choosePerson: .PersonTWo, message: returnedChatMessage.chatMessagePayload.imageTypePayload!.imageUrl)
-									DispatchQueue.main.async {
-										self.state.addViewModelToDisplayState(person: person)
-										resetTextField?()
-										self.reloadView!()
-									}
-							}
-							
-							
-							}
-							
+						case .message:
+							let person = Person(choosePerson: .personOne, message: returnedChatMessage.chatMessagePayload.messageTypePayload!.messageText)
+							return person
+						}
+						
+						
+					} else {
+						
+						switch messagetype {
+						case .message:
+							let person = Person(choosePerson: .PersonTWo, message: returnedChatMessage.chatMessagePayload.messageTypePayload!.messageText)
+							return person
+						case .image:
+							let person = Person(choosePerson: .PersonTWo, message: returnedChatMessage.chatMessagePayload.imageTypePayload!.imageUrl)
+							return person
 						}
 					}
 				}
+				DispatchQueue.main.async {
+					state.setViewModelDisplayStateArray(arrayOfPerson: arrayOfPeople)
+					reloadView!()
+				}
+				
+			}
+		}
 	}
 	
 	func checkMessageType(responseMessageFromServer: ReturnedChatMessages) -> PayloadType {

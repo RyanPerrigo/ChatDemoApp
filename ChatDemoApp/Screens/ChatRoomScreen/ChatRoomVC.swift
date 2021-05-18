@@ -19,6 +19,9 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBAction func sendButtonClicked(_ sender: Any) {
 		viewModel.onSendButtonClicked()
+		if textField.text != "" {
+			textField.text = ""
+		}
 		dismissKeyboard()
 	}
 	@IBOutlet weak var chatItemsContainerView: UIView!
@@ -68,9 +71,6 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		viewModel.reloadView = {
 			self.collectionView.reloadData()
 		}
-		viewModel.state.updateDisplayCallBack = {
-			self.collectionView.reloadData()
-		}
 		let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 		
 		view.addGestureRecognizer(tap)
@@ -78,7 +78,7 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidEngage), name: UIResponder.keyboardDidShowNotification, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisEngage), name: UIResponder.keyboardDidHideNotification, object: nil)
 	}
-	
+
 	@objc func keyboardDidDisEngage() {
 		dismissKeyboard()
 	}
@@ -186,6 +186,9 @@ class ChatRoomVC: UIViewController, Coordinating, UICollectionViewDataSource, UI
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if (text == "\n") {
 			viewModel.onSendButtonClicked()
+			if textField.text != "" {
+				textField.text = ""
+			}
 			setViewHeightToStringSize(constraint: textInputViewHeightConstraint, string: textView.text, optionalSizeIncrease: 50)
 			textView.resignFirstResponder()
 			dismissKeyboard()
