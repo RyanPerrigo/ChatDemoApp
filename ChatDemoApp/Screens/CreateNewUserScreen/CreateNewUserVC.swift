@@ -16,6 +16,9 @@ class CreateNewUserVC: UIViewController, Coordinating, UITextFieldDelegate {
 	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
+	@IBAction func enterClicked(_ sender: Any) {
+		print("EnterClicked")
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()

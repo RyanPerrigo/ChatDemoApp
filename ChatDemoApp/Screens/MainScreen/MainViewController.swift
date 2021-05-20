@@ -10,6 +10,9 @@ import UIKit
 class MainViewController: UIViewController, Coordinating {
 	
 
+	@IBAction func registerClicked(_ sender: Any) {
+		coordinator?.navigationController?.pushViewController(CreateNewUserVC(), animated: true)
+	}
 	@IBOutlet weak var button: UIButton!
 	@IBAction func goButtonTapped(_ sender: Any) {
 		coordinator?.navigationController?.pushViewController(ChatRoomVC(), animated: true)

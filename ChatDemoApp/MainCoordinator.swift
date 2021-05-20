@@ -37,7 +37,7 @@ class MainCoordinator: Coordinator {
 			vc.coordinator = self
 			navigationController?.pushViewController(vc, animated: true)
 		case .loginTapped:
-			// need to set up login page vc stuff
+			
 			print("loggin Tapped Broo")
 				}
 	}

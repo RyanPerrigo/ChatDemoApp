@@ -44,6 +44,9 @@
                     <rect key="frame" x="157" y="730" width="98" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Register/Login"/>
+                    <connections>
+                        <action selector="registerClicked:" destination="-1" eventType="touchUpInside" id="Y0f-Dc-TRP"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

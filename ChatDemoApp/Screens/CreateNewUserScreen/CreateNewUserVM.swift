@@ -32,7 +32,7 @@ class CreateNewUserVCM {
 	
 	var state = CreateNewUserVMState()
 	
-	
+	func setText
 	
 	
 	
